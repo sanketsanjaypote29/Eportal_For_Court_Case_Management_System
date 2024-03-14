@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+    <link rel="stylesheet" href="../css/dash_lawyer.css" />
+  </head>
+  <body>
+    <nav class="nav-head">
+      <img src="../images/Logopng-02.png" alt="logo" class="logo" />
+      <h1>E-Portal</h1>
+      <div class="user">
+        <button
+          class="btn dropdown-toggle"
+          type="button"
+          id="dropdownMenuButton1"
+          data-bs-toggle="dropdown"
+          aria-expanded="false">
+          <img src="../images/icons8-user-24.png" alt="user" />
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          <li><a class="dropdown-item" href="#">Profile</a></li>
+          <li><a class="dropdown-item" href="#">Options</a></li>
+          <li>
+            <button class="dropdown-item" onclick="signOut()">Sign Out</button>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <section class="main-container">
+      <aside class="sidebar">
+        <div class="dash">
+          <h6>Dashboard</h6>
+        </div>
+        <div class="dash-opt">
+          <button class="btn11 dash-btn">Profile</button>
+          <button class="btn22 dash-btn">New Case</button>
+          <button class="btn33 dash-btn">Case Status</button>
+          <button class="btn44 dash-btn">Video Conference</button>
+          <button class="btn55 dash-btn">Total Cases</button>
+          <!-- <button class="btn66 dash-btn">Case Info</button> -->
+        </div>
+      </aside>
+      <nav class="navbar navbar-expand-lg navbar-light" style="height: 70px">
+        <!-- <ul>
+               <a href="/"><li>Home</li></a>
+               <a href="/service"><li>Services</li></a>
+               <a href="/about"><li>About</li></a>
+               <a href="/contactUs"><li>Contact Us</li></a>
+               <div class="dropdown">
+                   <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                     Courts
+                   </button>
+                   <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                     <li><a class="dropdown-item" href="https://main.sci.gov.in/">Supreme Court</a></li>
+                     <li><a class="dropdown-item" href="https://mphc.gov.in/">High Court</a></li>
+                     <li><a class="dropdown-item" href="https://district.mphc.gov.in/">District Court</a></li>
+                   </ul>
+                 </div>
+                </ul> -->
+      </nav>
+      <section class="main" id="main_place">
+        <div class="Dcards">
+          <div id="Profile" class="box11 hide">
+            <div class="container-pro">
+              <div class="userImg">
+                <img
+                  src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png"
+                  alt="user" />
+              </div>
+              <div class="details">
+                <div class="name">
+                  <h2>Name:- <%= lawyerData.name %></h2>
+                </div>
+                <p class="record">Phone:- <%= lawyerData.phone %></p>
+                <br />
+                <p class="record">Emai:- <%= lawyerData.email %></p>
+                <br />
+                <p class="record">State:- <%= lawyerData.state %></p>
+                <br />
+                <p class="record">
+                  Bar no. :- <%= lawyerData.bar_association_no %>
+                </p>
+                <br />
+                <p class="record"></p>
+                <br />
+              </div>
+            </div>
+          </div>
+
+          <div id="newCase" class="box22 hide">
+            <div class="typeform">
+              <h3>case form</h3>
+              <form action="/lawyer/case" method="post">
+                <div class="line">
+                  <label for="district">District :</label>
+                  <input type="text" name="district" required /><br />
+                </div>
+                <div class="line">
+                  <label for="court">Court :</label>
+                  <input
+                    type="radio"
+                    name="court"
+                    value="District court"
+                    id="districtCourt" />
+                  <label for="districtCourt">District court</label>
+                  <input
+                    type="radio"
+                    name="court"
+                    value="High court"
+                    id="highCourt" />
+                  <label for="highCourt">High court</label><br />
+                </div>
+
+                <div class="line">
+                  <label for="mattertype">Matter type :</label>
+                  <input
+                    type="radio"
+                    name="matter"
+                    value="Urgent"
+                    id="Urgent" />
+                  <label for="Urgent">Urgent</label>
+                  <input
+                    type="radio"
+                    name="matter"
+                    value="Ordinary"
+                    id="Ordinary" />
+                  <label for="Ordinary">Ordinary</label><br />
+                </div>
+
+                <div class="line">
+                  <label for="caseType">Case type :</label>
+                  <select id="caseType" name="case_type">
+                    <!-- <option value="volvo"></option> -->
+                    <option value="civil">Civil</option>
+                    <option value="criminal">Criminal</option>
+                    <option value="martial">Marital</option></select
+                  ><br />
+                </div>
+
+                <div class="line">
+                  <label for="court">Is MACT matter :</label>
+                  <input type="radio" name="mact" value="yes" id="y" />
+                  <label for="yes">Yes</label>
+                  <input type="radio" name="mact" value="no" id="n" />
+                  <label for="no">No</label><br />
+                </div>
+
+                <div class="line buttons">
+                  <input class="btn btn-primary" type="reset" value="Reset" />
+                  <button class="btn" type="submit">
+                    <span class="btnText">Next</span>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <div id="caseStatus" class="box33 hide">
+            <div class="container">
+              <div class="wrapper">
+                <form action="/lawyer/lawyer_login" method="post">
+                  <h1>Case Type</h1>
+                  <div class="input-box">
+                    <input
+                      type="text"
+                      name="username"
+                      placeholder="Case Type"
+                      required />
+                  </div>
+
+                  <div class="input-box">
+                    <input type="number" placeholder="Number" required />
+                  </div>
+
+                  <a href="/lawyer/dashboard" class="btn">Show</a>
+                </form>
+              </div>
+
+              <div class="wrapper CNR">
+                <form action="/client/client_login" method="post">
+                  <h1>Search by CNR number</h1>
+
+                  <div class="input-box">
+                    <input
+                      type="text"
+                      name="username"
+                      placeholder="Enter 16 digit CNR number"
+                      required />
+                  </div>
+                  <a href="/client/dashboard" class="btn">Show</a>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <div id="onlineHearing" class="box44 hide">
+            <span
+              >To join your online video conferencing hearing click the button
+              below</span
+            ><br /><br />
+            <span
+              >You will require to provide your <br />
+              1.Name <br />2.Room Password <br />
+              3.Your FaceID</span
+            ><br /><br />
+            <a href="/lawyer/verify_img" class="btn join-btn">Join Hearing</a>
+          </div>
+          <div id="onlineHearing" class="box55 hide">
+            <div class="section" style="position: relative; top: -100px">
+              <div class="row">
+                <div
+                  class="card text-center mb-3 bg-primary fcard"
+                  style="width: 9.1rem">
+                  <div class="card-body">
+                    <p class="card-text">Total cases registered</p>
+                    <h1 class="card-title">150</h1>
+                  </div>
+                </div>
+                <div
+                  class="card text-center mb-3 bg-success"
+                  style="width: 9.1rem">
+                  <div class="card-body">
+                    <p class="card-text">Cases Won</p>
+                    <h1 class="card-title">120</h1>
+                  </div>
+                </div>
+                <div
+                  class="card text-center mb-3 bg-warning"
+                  style="width: 9.1rem">
+                  <div class="card-body">
+                    <p class="card-text">Cases pending</p>
+                    <h1 class="card-title">5</h1>
+                    <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                  </div>
+                </div>
+                <div
+                  class="card text-center mb-3 bg-danger"
+                  style="width: 9.1rem">
+                  <div class="card-body">
+                    <p class="card-text">Cases Lost</p>
+                    <h1 class="card-title">25</h1>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div
+                  class="card text-center mb-3 bg-primary fcard"
+                  style="width: 9.1rem">
+                  <div class="card-body">
+                    <p class="card-text">Rating</p>
+                    <h1 class="card-title">4.5</h1>
+                    <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                  </div>
+                </div>
+                <div
+                  class="card text-center mb-3 bg-success"
+                  style="width: 9.1rem">
+                  <div class="card-body">
+                    <p class="card-text">Won percentage</p>
+                    <h1 class="card-title">80%</h1>
+                    <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                  </div>
+                </div>
+                <div
+                  class="card text-center mb-3 bg-warning"
+                  style="width: 9.1rem">
+                  <div class="card-body">
+                    <p class="card-text">Number of Employees</p>
+                    <h1 class="card-title">50</h1>
+                    <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                  </div>
+                </div>
+                <div
+                  class="card text-center mb-3 bg-danger"
+                  style="width: 9.1rem">
+                  <div class="card-body">
+                    <p class="card-text">Year of Experience</p>
+                    <h1 class="card-title">10</h1>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+    <footer class="dash-footer">
+      <div class="links">
+        <div class="Qlinks">
+          <h4>Quick links</h4>
+          <a href="#">Video Tutorials</a><br />
+          <a href="/contactUs">Contact Us</a><br />
+          <a href="/about">About Us</a><br />
+          <a href="https://main.sci.gov.in/">e-committee</a><br />
+          <a href="/terms&condition">Terms and Condition</a><br />
+          <a href="/site_map">Site Map</a><br />
+          <a href="#">Screen Reader Access</a>
+        </div>
+        <div class="partners">
+          <a href="https://digitalindia.gov.in/" target="_blank"
+            ><img src="../images/Digital-India-Color.svg" alt="Digital India"
+          /></a>
+          <a href="https://doj.gov.in/" target="_blank"
+            ><img
+              src="../images/Ministry_of_Law_and_Justice.svg.png"
+              alt="Department of Justice"
+          /></a>
+          <a href="https://main.sci.gov.in/e-committee" target="_blank"
+            ><img
+              src="../images/Emblem_of_the_Supreme_Court_of_India.svg.png"
+              alt="e-committee"
+          /></a>
+          <a href="https://www.nic.in/" target="_blank"
+            ><img src="../images/NIC_logo.svg.png" alt="NIC"
+          /></a>
+          <a href="https://www.indiacode.nic.in/" target="_blank"
+            ><img src="../images/India-code-logo.png" alt="India code"
+          /></a>
+        </div>
+      </div>
+      <div class="copyright">
+        <span
+          >Version : 1.0 © e-Court Portal, for online hearing conference. All
+          Rights Reserved.</span
+        >
+      </div>
+    </footer>
+
+    <script>
+      var btn11 = document.querySelector(".btn11");
+      var btn22 = document.querySelector(".btn22");
+      var btn33 = document.querySelector(".btn33");
+      var btn44 = document.querySelector(".btn44");
+      var box11 = document.querySelector(".box11");
+      var box22 = document.querySelector(".box22");
+      var box33 = document.querySelector(".box33");
+      var box44 = document.querySelector(".box44");
+      var btn55 = document.querySelector(".btn55");
+      var box55 = document.querySelector(".box55");
+
+      btn11.addEventListener("click", function () {
+        box11.classList.add("show");
+        box22.classList.remove("show");
+        box33.classList.remove("show");
+        box44.classList.remove("show");
+        box55.classList.remove("show");
+      });
+      btn22.addEventListener("click", function () {
+        box22.classList.add("show");
+        box11.classList.remove("show");
+        box33.classList.remove("show");
+        box44.classList.remove("show");
+        box55.classList.remove("show");
+      });
+      btn33.addEventListener("click", function () {
+        box33.classList.add("show");
+        box11.classList.remove("show");
+        box22.classList.remove("show");
+        box44.classList.remove("show");
+        box55.classList.remove("show");
+      });
+      btn44.addEventListener("click", function () {
+        box44.classList.add("show");
+        box11.classList.remove("show");
+        box22.classList.remove("show");
+        box33.classList.remove("show");
+        box55.classList.remove("show");
+      });
+      btn55.addEventListener("click", function () {
+        box55.classList.add("show");
+        box11.classList.remove("show");
+        box22.classList.remove("show");
+        box33.classList.remove("show");
+        box44.classList.remove("show");
+      });
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"></script>
+    <script>
+      function signOut() {
+        // Function to delete the authentication cookie
+        document.cookie =
+          "lawyer_id=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        // Redirect to a sign-out or home page
+        window.location.href = "../index.html"; // Replace with your sign-out or home page URL
+      }
+    </script>
+    <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
+    <script>
+      window.botpressWebChat.init({
+        composerPlaceholder: "E-Court assistant",
+        botConversationDescription: "Chat with E-court Assistant",
+        botId: "b80ca6bc-c761-4956-9270-07a0301dd470",
+        hostUrl: "https://cdn.botpress.cloud/webchat/v1",
+        messagingUrl: "https://messaging.botpress.cloud",
+        clientId: "b80ca6bc-c761-4956-9270-07a0301dd470",
+        webhookId: "65898120-11f3-4cdb-9ff0-eba428b1c4b2",
+        lazySocket: true,
+        themeName: "prism",
+        botName: "E-portal assistant",
+        stylesheet:
+          "https://webchat-styler-css.botpress.app/prod/a212a593-afcf-4b76-8f7d-c0287e0c121c/v82028/style.css",
+        frontendVersion: "v1",
+        useSessionStorage: true,
+        theme: "prism",
+        themeColor: "#2563eb",
+      });
+    </script>
+    <script>
+      async function fetchLawyerData() {
+        try {
+          const response = await fetch("/lawyer/Dashboard_lawyer");
+          if (!response.ok) {
+            throw new Error("Failed to fetch user data");
+          }
+          let lawyerData = await response.json();
+          console.log("inside lawyerData");
+          updateProfile(lawyerData);
+        } catch (error) {
+          console.error("Error fetching user data:", error);
+        }
+      }
+
+      function updateProfile(lawyerData) {
+        // Update profile elements with user data
+        document.getElementById("userName").textContent =
+          lawyerData.name || "N/A";
+        document.getElementById("userPhone").textContent =
+          lawyerData.phone || "N/A";
+        document.getElementById("userEmail").textContent =
+          lawyerData.email || "N/A";
+        document.getElementById("userState").textContent = lawyerData.state
+          ? "State - " + lawyerData.state
+          : "N/A";
+      }
+
+      fetchUserData();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="css/contactUs.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+</head>
+
+<body>
+    <nav class="nav-head">
+        <img src="images/Logopng-02.png" alt="logo" class="logo">
+        <h1>E-Portal</h1>
+        <div class="dropdown">
+            <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+              Register/Login
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <li><a class="dropdown-item" href="/lawyer/logging">As Lawyer</a></li>
+              <li><a class="dropdown-item" href="/client/logging">As Client</a></li>
+            </ul>
+          </div>
+    </nav>
+    <div class="contactUs">
+        <div class="title">
+            <h2 style="font-size: 35px; position: relative; bottom: 10px;">Contact Us</h2>
+        </div>
+        <div class="box">
+            <!-- form -->
+            <div class="contact form">
+                <h3>Send a Message</h3>
+                <form action="/contactUs_data" method="post">
+                    <div class="formBox">
+                        <div class="row50">
+                            <div class="inputBox">
+                                <span>First Name</span>
+                                <input type=" text" placeholder="first Name" name="first_name">
+                            </div>
+                            <div class="inputBox">
+                                <span>Last Name</span>
+                                <input type=" text" placeholder="Last Name" name="last_name">
+                            </div>
+                        </div>
+
+                        <div class="row50">
+                            <div class="inputBox">
+                                <span>Email</span>
+                                <input type=" email" placeholder="Enter Email" name="email">
+                            </div>
+                            <div class="inputBox">
+                                <span>Mobile Number</span>
+                                <input type="number" placeholder="Mobile Number" name="phone">
+                            </div>
+                        </div>
+
+                        <div class="row100">
+                            <div class="inputBox">
+                                <span>Message</span>
+                                <textarea placeholder="Write your message here..." name="message"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="row100">
+                            <div >
+                                <button style="background-color: rgb(61,12,2); color: white; height: 40px; width: 70px; cursor: pointer;
+                                ">
+                                <span class="btnText">Submit</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!-- info box -->
+            <div class="contact info" >
+                <h3>Contact Info</h3>
+                <div class="infoBox">
+                    <div>
+                        <span><ion-icon name="location"></ion-icon></span>
+                        <p>High court,Bhopal <br>INDIA</p>
+                    </div>
+                    <div>
+                        <span> <ion-icon name="mail"></ion-icon>
+                        </span>
+                        <a href="mailto:bhopalcourt@email.com">bhopalcourt@email.com</a>
+                    </div>
+                    <div>
+                        <span><ion-icon name="call"></ion-icon>
+                        </span>
+                        <a href="tel:+919878965467">+91 999 888 7685</a>
+                    </div>
+
+
+                    <!-- social media link -->
+                    <ul class="sci">
+                        <li><a href="#"><ion-icon name="logo-facebook"></ion-icon></a></li>
+                        <li><a href="#"><ion-icon name="logo-twitter"></ion-icon></a></li>
+                        <li><a href="#"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+                        <li><a href="#"><ion-icon name="logo-instagram"></ion-icon></a></li>
+                    </ul>
+
+                </div>
+            </div>
+
+            <!-- map -->
+            <div class="contact map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3666.198957759974!2d77.397651024094!3d23.235846029024795!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c42bde8f02dcf%3A0x3cf286d10ba239be!2sNew%20Market%2C%20STT%20Nagar%2C%20TT%20Nagar%2C%20Bhopal%2C%20Madhya%20Pradesh%20462003!5e0!3m2!1sen!2sin!4v1700910532938!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe></iframe>
+            </div>
+        </div>
+    </div>
+    <footer >
+        <div class="links" style="background-color: rgba(85, 42, 1, 0.253);">
+          <div class="Qlinks">
+            <h4>Quick links</h4>
+            <a href="#">Video Tutorials</a><br>
+            <a href="/contactUs">Contact Us</a><br>
+            <a href="/about">About Us</a><br>
+            <a href="https://main.sci.gov.in/">e-committee</a><br>
+            <a href="/terms&condition">Terms and Condition</a><br>
+            <a href="/site_map">Site Map</a><br>
+            <!-- <a href="#">Screen Reader Access</a> -->
+          </div>
+          <div class="partners">
+            <a href="https://digitalindia.gov.in/" target="_blank"><img src="images/Digital-India-Color.svg" alt="Digital India"></a>
+            <a href="https://doj.gov.in/" target="_blank"><img src="images/Ministry_of_Law_and_Justice.svg.png" alt="Department of Justice"></a>
+            <a href="https://main.sci.gov.in/e-committee" target="_blank"><img src="images/Emblem_of_the_Supreme_Court_of_India.svg.png" alt="e-committee"></a>
+            <a href="https://www.nic.in/" target="_blank"><img src="images/NIC_logo.svg.png" alt="NIC"></a>
+            <a href="https://www.indiacode.nic.in/" target="_blank"><img src="images/India-code-logo.png" alt="India code"></a>
+          </div>
+        </div>  
+        <div class="copyright">
+          <span>Version : 1.0 © e-Court Portal, for online hearing conference. All Rights Reserved.</span>
+        </div>          
+      </footer> 
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>  
+    <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
+<script>
+  window.botpressWebChat.init({
+      "composerPlaceholder": "E-Court assistant",
+      "botConversationDescription": "Chat with E-court Assistant",
+      "botId": "b80ca6bc-c761-4956-9270-07a0301dd470",
+      "hostUrl": "https://cdn.botpress.cloud/webchat/v1",
+      "messagingUrl": "https://messaging.botpress.cloud",
+      "clientId": "b80ca6bc-c761-4956-9270-07a0301dd470",
+      "webhookId": "65898120-11f3-4cdb-9ff0-eba428b1c4b2",
+      "lazySocket": true,
+      "themeName": "prism",
+      "botName": "E-portal assistant",
+      "stylesheet": "https://webchat-styler-css.botpress.app/prod/a212a593-afcf-4b76-8f7d-c0287e0c121c/v82028/style.css",
+      "frontendVersion": "v1",
+      "useSessionStorage": true,
+      "theme": "prism",
+      "themeColor": "#2563eb"
+  });
+</script>
+</body>
+
+</html>

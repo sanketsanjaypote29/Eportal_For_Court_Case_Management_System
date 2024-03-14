@@ -1,0 +1,275 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+body {
+    position: relative;
+}
+.logo {
+    height: 120px;
+}
+.nav-head h1, button {
+    display: inline;
+}
+.nav-head button {
+margin-right: 1.5rem;
+background-color: rgb(61,12,2);
+color: white;
+text-decoration: dotted;
+}
+.nav-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+@media screen and (max-width:500px) {
+    nav h1{
+        font-size: medium;
+    }
+}
+nav a {
+    display: table-cell;
+}
+nav div {
+    display: table-cell;
+}
+.navbar {
+    background-color: rgb(61,12,2);
+    width: 100%;
+    height: 80px;
+} 
+.navbar button{
+    background-color: rgb(61,12,2);
+    color: white;
+    text-decoration: dotted;
+    margin-bottom: 15px;
+    height: 15px;
+} 
+ul li {
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 1.4rem;
+    color: white;
+    align-items: center;
+}
+ul {
+    display: flex;
+    align-items: center;
+}
+#search {
+    margin-left: auto;
+}
+.conatiner {
+    width: 100%;
+    /* margin: 2%;
+    margin-left: 23%;  */
+}
+#carouselExampleCaptions {
+    height: min-content;
+}
+.carousel-caption {
+    padding-bottom: 15rem;
+}
+.btn{
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 600;
+    border-radius: 8px;
+    padding: 14px 24px;
+    border: none;
+    color: rgb(202, 202, 202);
+}
+.main .btn1{
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+    border-radius: 30%;
+    position: relative;
+    bottom: 13rem;
+    padding: .5rem;
+    opacity: 0;
+    color: rgb(202, 202, 202);
+  }
+.carousel-item img{
+    height: 26rem;
+    width: 100%;
+}
+.main .btn1:hover{
+    opacity: 100;
+}
+.carousel-indicators [data-bs-target] {
+    background-color:rgb(230, 230, 230) ;
+    border-color: rgb(230, 230, 230);
+    margin: 0px 2%;
+    position: relative;
+    bottom: 3rem;
+}    
+.latestSection {
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+    background-color: rgb(61,12,2);
+    color: white;
+    padding: 5px;
+    width: 100%;
+    position: absolute;
+    top: 42%
+}
+.latest {
+    padding: 10px 25px;
+    border-right: 1px solid white;
+    font-weight: bolder;
+}
+#latestupdates {
+    padding-left: 20px;
+}
+.notice {
+    width: 50%;
+    /* margin: 30px auto; */
+    margin-top: 80px;
+    margin-left:23% ;
+}
+.head {
+    background-color: rgb(61,12,2);
+    color: white;
+    padding: 5px;
+}
+head h1 {
+    display: inline;
+    margin: auto;
+}
+.shead {
+    background-color: rgba(85, 42, 1, 0.253);
+    color: rgb(14, 14, 14);
+    padding: 5px;
+}
+p {
+    background-color: rgb(216, 216, 216);
+    padding: 5px;
+}
+.bot {
+    position: absolute;
+    top: 50%;
+    right: 1%;
+    height: 24.5%;
+    width: 24.5%;
+}
+.chatbot {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(216, 216, 216);
+}
+.chatbot img {
+    height: 1rem;
+    width: 1rem;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+.assistent {
+    display: inline;
+    background-color: rgba(85, 42, 1, 0.253);
+    padding: 5px;
+    border-radius: 4%;
+    position: absolute;
+    left: 2%;
+    bottom: 12%;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+.inbox  {
+    border-radius: 1rem;
+    width: 85%;
+    position: absolute;
+    right: 6%;
+    bottom: 2%;
+}
+.inbox input {
+    width: 100%;
+}
+.chatbot button {
+    position: absolute;
+    right: 4%;
+    bottom: 2.2%;
+    border-radius: 50%;
+    display: inline;
+    height: 25px;
+    width: 25px;
+    background-color: rgb(63, 0, 0);
+    color: white;
+    
+}   
+.cards {
+    position: absolute;
+    top: 11%;
+    left: 1.1%;
+    display: inline-grid;
+    align-items: center;
+    justify-content: center ;
+    height: 25%;
+    width: 20%;
+} 
+.card {
+    position: relative;
+    /* width: 250px; */
+    height: auto;
+    background-color: rgba(85, 42, 1, 0.253);
+}
+.des {
+    /* width: 78%; */
+    font-size: .9rem;
+    padding: .5rem;
+}
+.card button {
+    position: absolute;
+    right: 2%;
+    top: 2%;
+    width: 1.5rem;
+}
+.links {
+    display: flex;
+    justify-content: space-around;
+    font-size: small;
+    background-color: rgba(85, 42, 1, 0.253);
+    height: 25%;
+    align-items: center; 
+    margin-top: 120px;
+}
+.Qlinks a {
+    color: black;
+    text-decoration: none;
+}
+.Qlinks a:hover {
+    text-decoration: underline;
+}
+.Qlinks {
+    margin-left: 60px;
+}
+.partners img {
+    width: 150px;
+    padding: 25px;
+}
+.copyright {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    background-color: rgb(63, 0, 0);;
+    color: white;
+    font-size: smaller;
+}
+
+@media screen and (min-width:500px) {
+    
+}
+
+.notice a {
+    color: black;
+    text-decoration: none;
+}
+.notice a:hover {
+    text-decoration: underline;
+}
