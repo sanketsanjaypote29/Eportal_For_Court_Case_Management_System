@@ -1,4 +1,4 @@
-# E-Court
+# E-Portal For Court Case Management System
 
 Steps to clone this portal in user IDE
 Step 1: Create a folder name "E-Court"
